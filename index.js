@@ -1,7 +1,10 @@
 $(() => {
     let options = {
         url: BASE_URL + '/tasks',
-        method: 'GET'
+        method: 'GET',
+        headers: {
+            AUTHORIZATION: app.session.token
+        }
     };
     $.ajax(options).then((response) => {
         let html = '';

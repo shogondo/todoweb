@@ -9,7 +9,10 @@ $(() => {
         let options = {
             url: BASE_URL + '/tasks',
             method: 'POST',
-            data: data
+            data: data,
+            headers: {
+                AUTHORIZATION: app.session.token
+            }
         };
         $.ajax(options).then(() => {
             window.location.href = 'index.html?message=created';

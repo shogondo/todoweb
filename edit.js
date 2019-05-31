@@ -16,7 +16,10 @@ $(() => {
         let options = {
             url: BASE_URL + '/tasks/' + id,
             method: 'PUT',
-            data: data
+            data: data,
+            headers: {
+                AUTHORIZATION: app.session.token
+            }
         };
         $.ajax(options).then(() => {
             window.location.href = 'index.html?message=updated';
@@ -28,7 +31,10 @@ $(() => {
         if (confirm('このタスクを削除します。よろしいですか？')) {
             let options = {
                 url: BASE_URL + '/tasks/' + id,
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    AUTHORIZATION: app.session.token
+                }
             };
             $.ajax(options).then(() => {
                 window.location.href = 'index.html?message=deleted';
@@ -40,7 +46,10 @@ $(() => {
 function loadTask(id) {
     let options = {
         url: BASE_URL + '/tasks/' + id,
-        method: 'GET'
+        method: 'GET',
+        headers: {
+            AUTHORIZATION: app.session.token
+        }
     };
     $.ajax(options).then((response) => {
         $('#title').val(response.title);
