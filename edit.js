@@ -1,5 +1,3 @@
-const BASE_URL = 'https://samurai-lesson-todoapi.herokuapp.com';
-
 $(() => {
     let params = new URLSearchParams(window.location.search);
     console.log(window.location.search);

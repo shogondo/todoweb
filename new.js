@@ -1,5 +1,3 @@
-const BASE_URL = 'https://samurai-lesson-todoapi.herokuapp.com';    
-
 $(() => {
     $('#form').submit((e) => {
         e.preventDefault();

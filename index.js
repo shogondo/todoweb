@@ -1,5 +1,3 @@
-const BASE_URL = 'https://samurai-lesson-todoapi.herokuapp.com';
-
 $(() => {
     let options = {
         url: BASE_URL + '/tasks',
